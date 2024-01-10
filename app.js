@@ -2,7 +2,6 @@
 let APIkey = localStorage.getItem("key")
 
 if(!APIkey){
-    console.log(APIkey)
     APIkey = prompt("Please input OpenWeather Api Key to use this app");
     localStorage.setItem("key", APIkey)
 }
@@ -44,7 +43,10 @@ function getLocationData(url) {
             return data.json();
         })
         .then((d) => printLocationData(d))
-        .catch((e) => alert(`${e.message} Try Again Later`));
+        .catch((e) => {
+            alert(`${e.message} Try Again Later`)
+            localStorage.clear()
+        });
 }
 
 
