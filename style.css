@@ -143,6 +143,7 @@ i {
     min-height: 15rem;
     justify-content: center;
     max-height: 15rem;
+    margin-top: 1rem;
 }
 .hourly::-webkit-scrollbar {
     display: none;
@@ -196,11 +197,24 @@ h2{
     margin: 0.5rem;
 }
 
+#resetkey{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    margin-top: 0.5rem;
+}
+#resetkey:hover{
+    color: red;
+
+}
+
 @media screen and (max-width: 700px) {
     body{
         height: auto;
         overflow: auto;
-        flex-direction: column-reverse;
+        flex-direction: column;
         padding: 0.5rem;
     }
     .main{
@@ -212,5 +226,22 @@ h2{
     .main-history{
         width: 100%;
         border-radius: 2rem;
+    }
+    .hourly{
+        min-height: 20rem;
+    }
+    .mob-h{
+        display: none;
+    }
+    #resetkey{
+        position: static;
+    }
+    .others{
+        justify-content: space-between;
+        margin: 0
+    }
+    .bottom{
+        justify-content: space-evenly;
+        margin: 0
     }
 }

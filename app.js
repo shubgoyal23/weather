@@ -7,6 +7,11 @@ if(!APIkey){
 
 let salutation = ["Good Morning", "Good Afternoon", "Good Evening"];
 
+document.querySelector("#resetkey").addEventListener("click", ()=>{
+    localStorage.clear()
+    location.reload();
+})
+
 let latitudeU;
 let longitudeU;
 
@@ -42,10 +47,7 @@ function getLocationData(url) {
             return data.json();
         })
         .then((d) => printLocationData(d))
-        .catch((e) => {
-            alert(`${e.message} Try Again Later`)
-            localStorage.clear()
-        });
+        .catch((e) => alert(`${e.message} Try Again Later`));
 }
 
 
@@ -90,17 +92,17 @@ function printLocationData(data) {
  <h1>${(data.main.temp - 273.15).toFixed(2)}&deg</h1>
 </div>
 <div class="others">
- <div class="type">Wind:<i class="fa-solid fa-wind"></i>${data.wind.speed}</div>
+ <div class="type"><span class="mob-h">Wind:</span><i class="fa-solid fa-wind"></i>${data.wind.speed}</div>
  <div class="type"><img src="https://openweathermap.org/img/wn/${data.weather[0].icon
         }@2x.png" alt=""> ${data.weather[0].description}</div>
- <div class="type">feels like: <i class="fa-solid fa-temperature-three-quarters"></i>${(
+ <div class="type"><span class="mob-h">feels like:</span> <i class="fa-solid fa-temperature-three-quarters"></i>${(
             data.main.feels_like - 273.15
         ).toFixed(2)}&deg</div>
 </div>
 <div class="others bottom">
- <div class="type">Pressure: <i class="fa-solid fa-down-long"></i>${data.main.pressure
+ <div class="type"><span class="mob-h">Pressure:</span> <i class="fa-solid fa-down-long"></i>${data.main.pressure
         }mb</div>
-        <div class="type">Humidity: <i class="fa-solid fa-droplet"></i>${data.main.humidity
+        <div class="type"><span class="mob-h">Humidity:</span> <i class="fa-solid fa-droplet"></i>${data.main.humidity
         }%</div>
 </div>`;
 
