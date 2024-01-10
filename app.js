@@ -1,4 +1,11 @@
-let APIkey = prompt("Please input OpenWeather Api Key to use this app");
+
+let APIkey = localStorage.getItem("key")
+
+if(!APIkey){
+    console.log(APIkey)
+    APIkey = prompt("Please input OpenWeather Api Key to use this app");
+    localStorage.setItem("key", APIkey)
+}
 
 let salutation = ["Good Morning", "Good Afternoon", "Good Evening"];
 
