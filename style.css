@@ -28,12 +28,19 @@ body{
     background-color: #f4f4f4;
     border-radius: 0 1.5rem 1.5rem 0;
 }
-.head, .others{
+.head{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    margin: 0 2rem;
+    margin: 0.5rem 2rem;
+}
+.others{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem 3.5rem;
 }
 .temp{
     display: flex;
@@ -44,11 +51,166 @@ body{
     font-size: 8rem;
     margin: 0;
 }
-.temp i{
-    font-size: 4rem;
-    margin: 0;
-    font-weight: 900;
+.bottom{
+    justify-content: space-evenly;
+}
+i {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+.others img{
+    margin-right: 0.5rem;
+    width: 3rem;
+}
+.type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.input-city{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.input-div{
+    width: 60%;
+    height: 3rem;
+    min-width: 300px;
+    background-color: #f4f4f4;
+    border: 2px solid #3e3e3e;
+    border-radius: 5rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-div input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    height: 90%;
+    font-size: 1rem;
+    color: #3e3e3e;
+    padding-left: 0.5rem;
+}
+.input-div button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+.input-div:hover{
+    transform: translate(0, 2px);
+}
 
+.main-history{
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.other-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+    margin: 2rem auto;
+}
+.hourly-container{
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hourly{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    width: 100%;
+    flex: 1;
+    min-height: 15rem;
+    justify-content: center;
+    max-height: 15rem;
+}
+.hourly::-webkit-scrollbar {
+    display: none;
+}
+.card{
+    width: 4.5rem;
+    height: 6rem;
+    border: solid 2px #a1a0a0;
+    border-radius: 10px;
+    padding: 0.2rem;
+    margin: 0.3rem;
+    box-shadow: 0 0 5px #c7c7c7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card div{
+    padding: 0;
+    display: inline;
+}
+.card-0{
+    font-size: 0.5rem;
+    margin: 0;
+}
+.card-1{
+    font-size: 0.9rem;
+    margin: 0;
+}
+.card-2{
+    font-size: 1.3rem;
+    color: #3e3e3e;
+    margin: 0.2rem;
+}
+.card-3{
+    font-size: 0.7rem;
+    color: #a1a0a0;
+    text-align: center;
+    margin: 0;
+}
+.salutation{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.main-history h4{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+h2{
+    margin: 0.5rem;
+}
 
+@media screen and (max-width: 700px) {
+    body{
+        height: auto;
+        overflow: auto;
+        flex-direction: column-reverse;
+        padding: 0.5rem;
+    }
+    .main{
+        flex-direction: column;
+    }
+    .main-temp{
+        width: 100%;
+    }
+    .main-history{
+        width: 100%;
+        border-radius: 2rem;
+    }
+}
