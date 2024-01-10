@@ -1,4 +1,3 @@
-
 let APIkey = localStorage.getItem("key")
 
 if(!APIkey){
@@ -125,7 +124,7 @@ let btn = document.querySelector("#btn");
 
 btn.addEventListener("click", () => {
     let name = city.value;
-    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=1&appid=${APIkey}`;
+    let url = `https://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=1&appid=${APIkey}`;
     fetch(url)
         .then((res) => res.json())
         .then((data) => {
